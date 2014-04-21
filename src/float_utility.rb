@@ -17,4 +17,11 @@ class FloatUtility
     tail = str.slice(boundary, str.length)
     return head, tail
   end
+
+  def FloatUtility.decode_gene(str_gene, num_bits_floats, a, b)
+    halves = FloatUtility.halve(str_gene)
+    x = FloatUtility.decode_float(halves[0], num_bits_floats, a, b)
+    y = FloatUtility.decode_float(halves[1], num_bits_floats, a, b)
+    return x.round(6), y.round(6)
+  end
 end

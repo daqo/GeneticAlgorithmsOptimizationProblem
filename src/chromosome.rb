@@ -30,7 +30,7 @@ class Chromosome
     x = a.to_f
     y = b.to_f
 
-    #return 1.to_f / ((x ** 2) + (y ** 2) + 1)
+    # return 1.to_f / ((x ** 2) + (y ** 2) + 1)
 
 
     return (1 + ((x + y + 1) ** 2) * (19 - 14 * x + 3 * (x ** 2) - 14 * y + 6 * x * y + 3 * (y ** 2))) * (
