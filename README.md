@@ -7,3 +7,5 @@ Genetic algorithms can effectively be used to find the maxima/minima of a functi
 The function is subject to the following constraints: 
  −2.0 ≤ x ≤ 2.0, −2.0 ≤ y ≤ 2.0.
 Below is a visualization of the function in the defined range. Note the presence of several local minima, and one global minimum.
+
+We will try to find the global minimum of the mentioned function.
