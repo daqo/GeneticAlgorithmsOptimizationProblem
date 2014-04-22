@@ -36,7 +36,6 @@ NUM_GENERATIONS.times do |generation|
     end
   end
 
-
   population = offspring
 end
 

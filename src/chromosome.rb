@@ -13,7 +13,6 @@ class Chromosome
     if genes == ""
       initial_x = FloatUtility.random_float_in_range(MIN_RANGE, MAX_RANGE)
       initial_y = FloatUtility.random_float_in_range(MIN_RANGE, MAX_RANGE)
-      # puts "x: #{initial_x}, y: #{initial_y}"
       self.genes = FloatUtility.encode_float(initial_x, NUM_BITS_FLOATS, MIN_RANGE, MAX_RANGE) + FloatUtility.encode_float(initial_y, NUM_BITS_FLOATS, MIN_RANGE, MAX_RANGE)
     else
       self.genes = genes
@@ -25,13 +24,8 @@ class Chromosome
   end
 
   def fitness
-    a = FloatUtility.decode_float(self.genes[0..NUM_BITS_FLOATS - 1], NUM_BITS_FLOATS, MIN_RANGE, MAX_RANGE)
-    b = FloatUtility.decode_float(self.genes[NUM_BITS_FLOATS, 2 * NUM_BITS_FLOATS - 1], NUM_BITS_FLOATS, MIN_RANGE, MAX_RANGE)
-    x = a.to_f
-    y = b.to_f
-
-    # return 1.to_f / ((x ** 2) + (y ** 2) + 1)
-
+    x = FloatUtility.decode_float(self.genes[0..NUM_BITS_FLOATS - 1], MIN_RANGE, MAX_RANGE)
+    y = FloatUtility.decode_float(self.genes[NUM_BITS_FLOATS, 2 * NUM_BITS_FLOATS - 1], MIN_RANGE, MAX_RANGE)
 
     return (1 + ((x + y + 1) ** 2) * (19 - 14 * x + 3 * (x ** 2) - 14 * y + 6 * x * y + 3 * (y ** 2))) * (
       ((2 * x - 3 * y) ** 2) *
